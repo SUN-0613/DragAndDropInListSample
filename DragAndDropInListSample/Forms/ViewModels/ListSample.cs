@@ -20,7 +20,31 @@ namespace DragAndDropInListSample.Forms.ViewModels
         /// <summary>
         /// List.SelectedItem
         /// </summary>
-        public RowData SelectedItem { get; set; }
+        private RowData _SelectedItem = null;
+
+        /// <summary>
+        /// List.SelectedItem
+        /// </summary>
+        public RowData SelectedItem 
+        { 
+            get { return _SelectedItem; }
+            set
+            {
+
+                // 選択データがあればPopupを表示
+                IsOpenPopup = (value != null);
+                CallPropertyChanged(nameof(IsOpenPopup));
+
+                _SelectedItem = value;
+                CallPropertyChanged();
+
+            }
+        }
+
+        /// <summary>
+        /// Popup.Show
+        /// </summary>
+        public bool IsOpenPopup { get; set; } = false;
 
         #endregion
 
