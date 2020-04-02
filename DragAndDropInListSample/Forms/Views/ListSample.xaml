@@ -10,7 +10,14 @@
         <vm:ListSample />
     </Window.DataContext>
     <Grid>
-        <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" >
+        <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <!-- セル横並び-->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
             <!-- 表示内容 -->
             <ListBox.ItemTemplate>
                 <DataTemplate>
