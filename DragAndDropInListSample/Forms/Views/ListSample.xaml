@@ -3,10 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DragAndDropInListSample.Forms.Views"
+        xmlns:vm="clr-namespace:DragAndDropInListSample.Forms.ViewModels"
         mc:Ignorable="d"
-        Title="ListSample" Height="450" Width="800">
+        Title="ListSample" Height="450" Width="400">
+    <Window.DataContext>
+        <vm:ListSample />
+    </Window.DataContext>
     <Grid>
-        
+        <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" >
+            <!-- 表示内容 -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="5,0" >
+                        <!-- Index -->
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Index = " />
+                            <TextBlock Text="{Binding Index}" />
+                        </StackPanel>
+                        <!-- Value -->
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Value = " />
+                            <TextBlock Text="{Binding Value}" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

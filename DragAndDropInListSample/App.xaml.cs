@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using DragAndDropInListSample.Forms.Views;
+using System.Windows;
 
 namespace DragAndDropInListSample
 {
@@ -16,6 +17,8 @@ namespace DragAndDropInListSample
         {
 
             base.OnStartup(e);
+
+            new ListSample().ShowDialog();
 
         }
 

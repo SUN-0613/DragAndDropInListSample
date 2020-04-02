@@ -35,8 +35,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonWPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\CommonWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,6 +85,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Models\ListSample.cs" />
+    <Compile Include="Forms\ViewModels\RowData.cs" />
+    <Compile Include="Forms\ViewModels\ListSample.cs" />
+    <Compile Include="Forms\Views\ListSample.xaml.cs">
+      <DependentUpon>ListSample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -78,6 +108,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Libraries\CommonWPF.dll.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,10 +117,28 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Forms\Models\" />
-    <Folder Include="Forms\ViewModels\" />
-    <Folder Include="Forms\Views\" />
+    <Content Include="Libraries\Common.dll" />
+    <Content Include="Libraries\Common.pdb" />
+    <Resource Include="Libraries\Common.xml" />
+    <Content Include="Libraries\CommonWPF.dll" />
+    <Content Include="Libraries\CommonWPF.pdb" />
+    <Resource Include="Libraries\CommonWPF.xml" />
+    <Content Include="Libraries\Microsoft.Expression.Interactions.dll" />
+    <Resource Include="Libraries\Microsoft.Expression.Interactions.xml" />
+    <Content Include="Libraries\Microsoft.WindowsAPICodePack.dll" />
+    <Content Include="Libraries\Microsoft.WindowsAPICodePack.Shell.dll" />
+    <Resource Include="Libraries\Microsoft.WindowsAPICodePack.Shell.xml" />
+    <Resource Include="Libraries\Microsoft.WindowsAPICodePack.xml" />
+    <Content Include="Libraries\System.Windows.Interactivity.dll" />
+    <Resource Include="Libraries\System.Windows.Interactivity.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Forms\Views\ListSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
