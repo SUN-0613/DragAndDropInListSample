@@ -11,7 +11,8 @@
     </Window.DataContext>
     <Grid>
         <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" 
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown">
             <!-- セル横並び-->
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -48,8 +49,9 @@
         
         <!-- Listで選択した内容をPopupで表示 -->
         <Popup IsOpen="{Binding IsOpenPopup}"
-               StaysOpen="True" AllowsTransparency="True"
-               Placement="Relative" HorizontalOffset="0" VerticalOffset="0" >
+               StaysOpen="True" PopupAnimation="Fade" AllowsTransparency="True"
+               Placement="Relative" HorizontalOffset="0" VerticalOffset="0" 
+               Opened="Popup_Opened" >
             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="5,0" Background="White" >
                 <!-- Index -->
                 <StackPanel Orientation="Horizontal" >
