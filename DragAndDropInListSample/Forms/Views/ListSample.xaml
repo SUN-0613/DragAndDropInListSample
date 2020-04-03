@@ -12,7 +12,8 @@
     <Grid>
         <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" 
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                 PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonEvent" >
+                 PreviewMouseLeftButtonDown="OnPreviewMouseLeftButtonEvent" 
+                 SelectionChanged="OnSelectionChanged" >
             <!-- セル横並び-->
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -48,24 +49,24 @@
         </ListBox>
         
         <!-- Listで選択した内容をPopupで表示 -->
+        <!--
         <Popup IsOpen="{Binding IsOpenPopup}"
                StaysOpen="True" PopupAnimation="Fade" AllowsTransparency="True"
                Placement="MousePoint" HorizontalOffset="-10" VerticalOffset="-10" 
-               MouseLeftButtonDown="Popup_MouseLeftButtonEvent" MouseLeftButtonUp="Popup_MouseLeftButtonEvent" 
-               MouseMove="Popup_MouseMove" >
+               PreviewMouseLeftButtonDown="OnPreviewMouseLeftButtonEvent" 
+               MouseMove="OnMouseMove" MouseLeave="OnMouseMove" >
             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="5,0" Background="White" >
-                <!-- Index -->
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Index = " />
                     <TextBlock Text="{Binding SelectedItem.Index}" />
                 </StackPanel>
-                <!-- Value -->
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock Text="Value = " />
                     <TextBlock Text="{Binding SelectedItem.Value}" />
                 </StackPanel>
             </StackPanel>
         </Popup>
+        -->
         
     </Grid>
 </Window>
