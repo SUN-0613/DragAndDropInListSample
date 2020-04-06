@@ -90,6 +90,7 @@ namespace DragAndDropInListSample.Forms.Views
 
                 #region 子要素の作成
 
+                // 1行目のStackPanel
                 var textBlock1_1 = new TextBlock() { Text = "Index = ", };
                 var textBlock1_2 = new TextBlock();
                 var binding1_2 = new Binding(nameof(viewModel.SelectedItem.Index)) { Source = viewModel.SelectedItem };
@@ -100,12 +101,14 @@ namespace DragAndDropInListSample.Forms.Views
                 horizontalStackPanel1.Children.Add(textBlock1_1);
                 horizontalStackPanel1.Children.Add(textBlock1_2);
 
+                // 2行目のStackPanel
                 var textBlock2_1 = new TextBlock() { Text = "Value = ", };
                 var textBlock2_2 = new TextBlock();
                 var binding2_2 = new Binding(nameof(viewModel.SelectedItem.Value)) { Source = viewModel.SelectedItem };
 
                 textBlock2_2.SetBinding(TextBlock.TextProperty, binding2_2);
 
+                // 全体のStackPanel
                 var horizontalStackPanel2 = new StackPanel() { Orientation = Orientation.Horizontal };
                 horizontalStackPanel1.Children.Add(textBlock2_1);
                 horizontalStackPanel1.Children.Add(textBlock2_2);
