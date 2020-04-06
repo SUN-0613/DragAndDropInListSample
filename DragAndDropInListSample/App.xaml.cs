@@ -18,7 +18,7 @@ namespace DragAndDropInListSample
 
             base.OnStartup(e);
 
-            new ListSample().ShowDialog();
+            new AdornerSample().ShowDialog();
 
         }
 
