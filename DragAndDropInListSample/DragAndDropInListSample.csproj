@@ -83,6 +83,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Win32\MousePosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\Models\ListSample.cs" />

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using DragAndDropInListSample.Win32;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
@@ -43,9 +44,17 @@ namespace DragAndDropInListSample.Forms.Views
 
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                _MousePoint = e.GetPosition(this);
+                SetMousePoint();
             }
 
+        }
+
+        /// <summary>
+        /// マウスカーソル位置記憶
+        /// </summary>
+        private void SetMousePoint()
+        {
+            _MousePoint = MousePosition.Get();
         }
 
         /// <summary>
@@ -64,8 +73,20 @@ namespace DragAndDropInListSample.Forms.Views
         private void MakePopup()
         {
 
-            if (this.DataContext is ViewModels.ListSample viewModel)
+            if (this.DataContext is ViewModels.ListSample viewModel
+                && this.Content is Grid grid)
             {
+
+                // 作成済みのPopupを削除
+                for (var iLoop = grid.Children.Count - 1; iLoop >= 0; iLoop--)
+                {
+
+                    if (grid.Children[iLoop] is Popup value)
+                    {
+                        grid.Children.RemoveAt(iLoop);
+                    }
+
+                }
 
                 #region 子要素の作成
 
@@ -117,10 +138,11 @@ namespace DragAndDropInListSample.Forms.Views
                 popup.MouseMove += OnMouseMove;
                 popup.MouseLeave += OnMouseLeave;
 
-                if (this.Content is Grid grid)
-                {
-                    grid.Children.Add(popup);
-                }
+                // 作成したPopupの表示
+                grid.Children.Add(popup);
+
+                // マウスカーソル位置記憶
+                SetMousePoint();
 
             }
 
@@ -137,7 +159,7 @@ namespace DragAndDropInListSample.Forms.Views
             if (e.LeftButton == MouseButtonState.Pressed)
             {
 
-                var position = e.GetPosition(this);
+                var position = MousePosition.Get();
 
                 if (_MousePoint.Equals(_InitializePoint))
                 {
