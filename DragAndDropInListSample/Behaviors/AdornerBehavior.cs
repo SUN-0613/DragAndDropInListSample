@@ -19,7 +19,7 @@ namespace DragAndDropInListSample.Behaviors
 
         #region IsEnabled
 
-        /// <summary>対象ControlのIsEnabled依存プロパティ</summary>
+        /// <summary>対象ControlのIsEnabled添付プロパティ</summary>
         public static readonly DependencyProperty IsEnabledProperty
                                                     = DependencyProperty.RegisterAttached(
                                                         "IsEnabled",
@@ -27,7 +27,7 @@ namespace DragAndDropInListSample.Behaviors
                                                         typeof(AdornerBehavior),
                                                         new PropertyMetadata(false, OnIsEnabledPropertyChanged));
 
-        /// <summary>対象ControlのIsEnabled依存プロパティの値を取得</summary>
+        /// <summary>対象ControlのIsEnabled添付プロパティの値を取得</summary>
         /// <param name="target">対象Control</param>
         /// <returns>対象ControlのIsEnabledの値</returns>
         public static bool GetIsEnabled(DependencyObject target)
@@ -35,7 +35,7 @@ namespace DragAndDropInListSample.Behaviors
             return (bool)target.GetValue(IsEnabledProperty);
         }
 
-        /// <summary>対象ControlのIsEnabled依存プロパティの値を更新</summary>
+        /// <summary>対象ControlのIsEnabled添付プロパティの値を更新</summary>
         /// <param name="target">対象Control</param>
         /// <param name="value">更新値</param>
         public static void SetIsEnabled(DependencyObject target, bool value)
@@ -43,7 +43,7 @@ namespace DragAndDropInListSample.Behaviors
             target.SetValue(IsEnabledProperty, value);
         }
 
-        /// <summary>IsEnabled依存プロパティの値変更イベント</summary>
+        /// <summary>IsEnabled添付プロパティの値変更イベント</summary>
         /// <param name="sender">対象Control</param>
         /// <param name="e">変更内容データ</param>
         private static void OnIsEnabledPropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
