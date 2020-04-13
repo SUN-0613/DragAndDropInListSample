@@ -87,17 +87,25 @@
     <Compile Include="Behaviors\Data\DragAndDropObject.cs" />
     <Compile Include="Behaviors\ReorderableItemsControlBehavior.cs" />
     <Compile Include="Forms\Models\AdornerSample.cs" />
+    <Compile Include="Forms\Models\ListBoxDragAndDropAdornerSample.cs" />
     <Compile Include="Forms\Models\ReorderSample.cs" />
     <Compile Include="Forms\ViewModels\AdornerSample.cs" />
+    <Compile Include="Forms\ViewModels\ListBoxDragAndDropAdornerSample.cs" />
     <Compile Include="Forms\ViewModels\ReorderSample.cs" />
     <Compile Include="Forms\Views\AdornerSample.xaml.cs">
       <DependentUpon>AdornerSample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Views\ListBoxDragAndDropAdornerSample.xaml.cs">
+      <DependentUpon>ListBoxDragAndDropAdornerSample.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Views\ReorderSample.xaml.cs">
       <DependentUpon>ReorderSample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Win32\MouseInfo.cs" />
     <Compile Include="Win32\MousePosition.cs" />
     <Compile Include="Windows\Documents\GhostAdorner.cs" />
+    <Compile Include="Windows\Documents\GhostListBoxAdorner.cs" />
+    <Compile Include="Windows\FrameworkElementInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\Models\ListSample.cs" />
@@ -151,6 +159,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Forms\Views\AdornerSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Views\ListBoxDragAndDropAdornerSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,7 +18,7 @@ namespace DragAndDropInListSample
 
             base.OnStartup(e);
 
-            new ReorderSample().ShowDialog();
+            new ListBoxDragAndDropAdornerSample().ShowDialog();
 
         }
 
