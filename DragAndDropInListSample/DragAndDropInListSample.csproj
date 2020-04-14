@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="Behaviors\AdornerBehavior.cs" />
     <Compile Include="Behaviors\Data\DragAndDropObject.cs" />
+    <Compile Include="Behaviors\ListBoxItemBehavior.cs" />
     <Compile Include="Behaviors\ReorderableItemsControlBehavior.cs" />
     <Compile Include="Forms\Models\AdornerSample.cs" />
     <Compile Include="Forms\Models\ListBoxDragAndDropAdornerSample.cs" />
@@ -94,6 +95,9 @@
     <Compile Include="Forms\ViewModels\ReorderSample.cs" />
     <Compile Include="Forms\Views\AdornerSample.xaml.cs">
       <DependentUpon>AdornerSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Views\ListBoxDragAndDropAdornerBehaviorSample.xaml.cs">
+      <DependentUpon>ListBoxDragAndDropAdornerBehaviorSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\Views\ListBoxDragAndDropAdornerSample.xaml.cs">
       <DependentUpon>ListBoxDragAndDropAdornerSample.xaml</DependentUpon>
@@ -159,6 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Forms\Views\AdornerSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Views\ListBoxDragAndDropAdornerBehaviorSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
